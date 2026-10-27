@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Font Viewer</title>
+  </head>
+  <body>
+    <div id="app">
+      <aside class="sidebar">
+        <h1>Font Viewer</h1>
+        <label class="drop" id="drop">
+          <input id="file-input" type="file" accept=".ttf,.otf,.ttc,.otc,.woff,.woff2" hidden />
+          <span>Drop or browse font</span>
+        </label>
+        <div class="font-info">
+          <div><b>Font:</b> <span id="font-name" class="muted">No font loaded</span></div>
+          <div id="font-meta" class="meta"></div>
+          <select id="face-select" hidden></select>
+          <div id="font-error" class="error" hidden></div>
+        </div>
+        <hr />
+        <h2>Glyphs</h2>
+        <nav id="tree"></nav>
+      </aside>
+      <main class="main">
+        <header class="toolbar">
+          <div class="title">
+            <h2 id="group-title"></h2>
+            <span id="group-count" class="muted"></span>
+          </div>
+          <div class="controls">
+            <div class="segmented" id="filter">
+              <button data-filter="all" class="active">All</button>
+              <button data-filter="supported">Supported</button>
+              <button data-filter="missing">Missing</button>
+            </div>
+            <label class="size">
+              <span class="muted">Size</span>
+              <input id="cell-size" type="range" min="40" max="128" step="4" value="64" />
+            </label>
+            <button id="copy-missing" class="button">Copy missing</button>
+          </div>
+        </header>
+        <div class="content">
+          <div id="grid" class="grid-scroll"></div>
+          <div id="empty" class="empty" hidden></div>
+          <aside id="detail" class="detail" hidden></aside>
+        </div>
+      </main>
+    </div>
+    <div id="drop-overlay" hidden>Drop font to load</div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
