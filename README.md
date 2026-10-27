@@ -1,3 +1,5 @@
+![Font Viewer preview](preview.png)
+
 # Font Viewer
 
 A local web tool for checking how much of each Japanese character set a font covers:
